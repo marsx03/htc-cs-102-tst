@@ -20,6 +20,7 @@ namespace ClassesIntro
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -38,5 +39,7 @@ namespace ClassesIntro
             Dog dog = new Dog("Corgi", 12, dogName);
             dog.SayName();
         }
+
+        
     }
 }
