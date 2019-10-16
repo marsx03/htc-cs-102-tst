@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,29 +21,42 @@ namespace MovieApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        ObservableCollection<Movie> movieList = new ObservableCollection<Movie>();
+
         public MainWindow()
         {
             InitializeComponent();
 
-            
+            movieListView.ItemsSource = movieList;
 
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+             
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             Movie submitted = new Movie(givenTitle.Text, givenGenre.Text, double.Parse(givenReviewScore.Text));
 
+            movieList.Add(submitted);
+
             /* THIS INFO IS CONFINED WITHIN THE CONSTRUCTOR
             submitted.title = givenTitle.Text;
             submitted.genre = givenGenre.Text;
-            submitted.reviewScore = double.Parse(givenReviewScore.Text); */ 
+            submitted.reviewScore = double.Parse(givenReviewScore.Text); */
 
             submitted.displayInfo();
+
+            givenTitle.Clear();
+            givenGenre.Clear();
+            givenReviewScore.Clear();
+        }
+
+        private void movieListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

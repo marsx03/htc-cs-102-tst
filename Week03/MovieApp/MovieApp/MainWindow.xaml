@@ -5,20 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MovieApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
+        Title="MainWindow" Height="444.678" Width="573.892">
+    <Grid Margin="0,0,-6,0" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.69"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
         <Grid.RowDefinitions>
             <RowDefinition Height="16*"/>
             <RowDefinition Height="303*"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="givenTitle" HorizontalAlignment="Left" Height="39" Margin="20,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" TextChanged="textBox_TextChanged" Grid.Row="1"/>
-        <TextBox x:Name="givenGenre" HorizontalAlignment="Left" Height="39" Margin="20,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Grid.Row="1"/>
-        <TextBox x:Name="givenReviewScore" HorizontalAlignment="Left" Height="39" Margin="20,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Grid.Row="1"/>
-        <Label x:Name="titleLabel" Content="Title:" HorizontalAlignment="Left" Margin="20,40,0,0" VerticalAlignment="Top" Width="232" Grid.Row="1"/>
-        <Label x:Name="genreLabel" Content="Genre:" HorizontalAlignment="Left" Margin="20,110,0,0" VerticalAlignment="Top" Width="232" Grid.Row="1"/>
-        <Label x:Name="reviewScoreLabel" Content="Review Score:" HorizontalAlignment="Left" Margin="20,180,0,0" VerticalAlignment="Top" Width="232" Grid.Row="1"/>
-        <Label x:Name="instructionsLabel" Content="Input the Appropriate Information for the Movie." HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="30" Width="352"/>
-        <Button x:Name="submitButton" Content="Submit" HorizontalAlignment="Left" Margin="20,266,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <TextBox x:Name="givenTitle" HorizontalAlignment="Left" Height="33" Margin="14,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" TextChanged="textBox_TextChanged" Grid.Row="1"/>
+        <TextBox x:Name="givenGenre" HorizontalAlignment="Left" Height="33" Margin="222,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.Row="1" RenderTransformOrigin="0.595,0.521"/>
+        <TextBox x:Name="givenReviewScore" HorizontalAlignment="Left" Height="33" Margin="378,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99" Grid.Row="1"/>
+        <Label x:Name="titleLabel" Content="Title:" HorizontalAlignment="Left" Margin="14,303,0,0" VerticalAlignment="Top" Width="194" Grid.Row="1"/>
+        <Label x:Name="genreLabel" Content="Genre:" HorizontalAlignment="Left" Margin="222,303,0,0" VerticalAlignment="Top" Width="144" Grid.Row="1"/>
+        <Label x:Name="reviewScoreLabel" Content="Review Score:" HorizontalAlignment="Left" Margin="378,303,0,0" VerticalAlignment="Top" Width="99" Grid.Row="1"/>
+        <Label x:Name="instructionsLabel" Content="-----------------------------------------------------------------------------------------------------" HorizontalAlignment="Left" Margin="36,268,0,0" Grid.Row="1" VerticalAlignment="Top" Height="30" Width="510"/>
+        <Button x:Name="submitButton" Content="Submit" HorizontalAlignment="Left" Margin="491,334,0,0" Grid.Row="1" VerticalAlignment="Top" Width="55" Click="button_Click" Height="22"/>
+        <ListView x:Name="movieListView" HorizontalAlignment="Left" Height="216" Margin="64,28,0,0" Grid.Row="1" VerticalAlignment="Top" Width="441" SelectionChanged="movieListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="200" Header="Title" DisplayMemberBinding="{Binding title}"></GridViewColumn>
+                    <GridViewColumn Width="130" Header="Genre" DisplayMemberBinding="{Binding genre}"></GridViewColumn>
+                    <GridViewColumn Width="110" Header="Review Score" DisplayMemberBinding="{Binding reviewScore}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>
