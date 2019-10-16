@@ -35,12 +35,14 @@ namespace MovieApp
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Movie submitted = new Movie();
+            Movie submitted = new Movie(givenTitle.Text, givenGenre.Text, double.Parse(givenReviewScore.Text));
 
+            /* THIS INFO IS CONFINED WITHIN THE CONSTRUCTOR
             submitted.title = givenTitle.Text;
             submitted.genre = givenGenre.Text;
-            submitted.reviewScore = double.Parse(givenReviewScore.Text);
+            submitted.reviewScore = double.Parse(givenReviewScore.Text); */ 
 
+            submitted.displayInfo();
         }
     }
 }
