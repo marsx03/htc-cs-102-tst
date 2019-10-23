@@ -36,7 +36,7 @@ namespace MovieApp
              
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void sumbitButton_Click(object sender, RoutedEventArgs e)
         {
             Movie submitted = new Movie(givenTitle.Text, givenGenre.Text, double.Parse(givenReviewScore.Text));
 
@@ -47,7 +47,7 @@ namespace MovieApp
             submitted.genre = givenGenre.Text;
             submitted.reviewScore = double.Parse(givenReviewScore.Text); */
 
-            submitted.displayInfo();
+            //submitted.displayInfo();
 
             givenTitle.Clear();
             givenGenre.Clear();
@@ -57,6 +57,12 @@ namespace MovieApp
         private void movieListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void movieListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Movie selected = movieListView.SelectedItem as Movie;
+            selected.displayInfo();
         }
     }
 }
