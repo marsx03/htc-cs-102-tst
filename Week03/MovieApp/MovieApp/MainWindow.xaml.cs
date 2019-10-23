@@ -38,7 +38,7 @@ namespace MovieApp
 
         private void sumbitButton_Click(object sender, RoutedEventArgs e)
         {
-            Movie submitted = new Movie(givenTitle.Text, givenGenre.Text, double.Parse(givenReviewScore.Text));
+            Movie submitted = new Movie(givenTitle.Text, givenGenre.Text, double.Parse(givenReviewScore.Text),int.Parse(givenLength.Text), givenDirector.Text, givenLeadActor.Text);
 
             movieList.Add(submitted);
 
@@ -52,6 +52,9 @@ namespace MovieApp
             givenTitle.Clear();
             givenGenre.Clear();
             givenReviewScore.Clear();
+            givenLength.Clear();
+            givenDirector.Clear();
+            givenLeadActor.Clear();
         }
 
         private void movieListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
