@@ -30,7 +30,7 @@ namespace MovieApp
 
         public void displayInfo()
         {
-            MessageBox.Show($"Title: {title} \nGenre: {genre} \nReview Score: {reviewScore} \nLength: {length} \nDirector: {director} \nLead Actor: {leadActor}");
+            MessageBox.Show($"Title: {title} \n \nGenre: {genre} \nReview Score: {reviewScore} \nLength: {length} \n \nDirector: {director} \nLead Actor: {leadActor}");
         }
     }
 }
