@@ -7,39 +7,33 @@ using System.Windows;
 
 namespace InterfacesIntro
 {
-    public class Animal : ILifeFunctions
+    class Robot : ILifeFunctions
     {
+        //interface def: a template for a class that sets the guidelines for what a child class MUST have
+
         public int hitPoints { get; set; }
 
         public int Height { get; set; }
 
         public bool isOrganic { get; set; }
 
+        public string Material { get; set; }
+
         public string Name { get; set; }
 
         public virtual void GainSustenance()
         {
-
-        }
-
-        public virtual void Rest()
-        {
           
         }
 
-        public void SayName()
-        {
-            MessageBox.Show("My name is " + Name);
-        }
-
-        public virtual void Speak()
+        public virtual void Rest()
         {
 
         }
 
         public void Walk()
         {
-            MessageBox.Show($"{Name} walks a lonely road... the only one that {Name} has ever known... don't know where it goes... but it's only {Name}, and {Name} walks alone...");
+            MessageBox.Show($"Beep Beep Boop Bop 11010101110101 ... {Name} moved forward....")
         }
     }
 }

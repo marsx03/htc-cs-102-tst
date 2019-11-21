@@ -16,10 +16,11 @@ namespace InterfacesIntro
 
         public Duck() { }
 
-        public Duck(int height, string name)
+        public Duck(int height, string name, int hitPoints)
         {
             this.Height = height;
             this.Name = name;
+            this.hitPoints = hitPoints;
         }
     }
 }
